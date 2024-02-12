@@ -14,4 +14,9 @@ public class MediaProduct
 		this.year = year;
 		this.genre = genre;
 	}
+	
+	public String toString()
+	{
+		return this.title + " (" + this.year + ") " + this.genre.toString() + " $" + this.price;
+	}
 }
