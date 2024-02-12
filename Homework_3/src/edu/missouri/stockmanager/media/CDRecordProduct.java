@@ -12,8 +12,15 @@ public class CDRecordProduct extends MediaProduct
 		super(copy.title, copy.price, copy.year, copy.genre);
 	}
 	
+	@Override
 	public String toString()
 	{
 		return "CD: " + super.toString();
+	}
+	
+	@Override
+	public String toCsv()
+	{
+		return "CD," + this.title + "," + this.price + "," + this.year + "," + this.genre.toString();
 	}
 }

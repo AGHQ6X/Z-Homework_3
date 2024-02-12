@@ -15,5 +15,8 @@ public class Main
 		
 		//Print list of stock
 		sms.printListOfMediaProduct();
+		
+		//Save stock to file
+		sms.saveStock();
 	}
 }

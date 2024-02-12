@@ -3,8 +3,11 @@ package edu.missouri.stockmanager.stock;
 import edu.missouri.stockmanager.media.*;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+
 import java.util.ArrayList;
 
 public class StockManagerSingleton
@@ -77,7 +80,7 @@ public class StockManagerSingleton
 					}
 					else if (values[0].equals("Vinyl"))
 					{
-						this.products.add(new TapeRecordProduct(title, price, year, genre));
+						this.products.add(new VinylRecordProduct(title, price, year, genre));
 					}
 					else
 					{
@@ -107,8 +110,40 @@ public class StockManagerSingleton
 	
 	public boolean saveStock()
 	{
-		//TODO
-		return false;
+		//Create a writer object
+		BufferedWriter writer;
+						
+		//File opening
+		try
+		{
+			//Initialize reader
+			writer = new BufferedWriter(new FileWriter(this.inventoryFilePath, false));
+					
+			//Write opening line
+			writer.write("Type,Title,Price,Year,Genre");
+			writer.newLine();
+			
+			//Loop through lines
+			for (MediaProduct product : this.products)
+			{
+				writer.write(product.toCsv());
+				writer.newLine();
+			}
+				
+			//Close reader
+			writer.close();
+		} 
+		catch (IOException e)
+		{
+			//Print error
+			System.out.println("File write error: " + e.toString());
+				
+			//File read failed
+			return false;
+		}
+			
+		//If it got here, it succeeded
+		return true;
 	}
 	
 	public boolean updateItemPrice(MediaProduct product, double newPrice)

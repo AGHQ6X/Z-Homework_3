@@ -16,4 +16,10 @@ public class VinylRecordProduct extends MediaProduct
 	{
 		return "Vinyl: " + super.toString();
 	}
+	
+	@Override
+	public String toCsv()
+	{
+		return "Vinyl," + this.title + "," + this.price + "," + this.year + "," + this.genre.toString();
+	}
 }

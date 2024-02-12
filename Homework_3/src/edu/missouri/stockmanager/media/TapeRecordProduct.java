@@ -12,8 +12,15 @@ public class TapeRecordProduct extends MediaProduct
 		super(copy.title, copy.price, copy.year, copy.genre);
 	}
 	
+	@Override
 	public String toString()
 	{
 		return "Tape: " + super.toString();
+	}
+	
+	@Override
+	public String toCsv()
+	{
+		return "Tape," + this.title + "," + this.price + "," + this.year + "," + this.genre.toString();
 	}
 }
