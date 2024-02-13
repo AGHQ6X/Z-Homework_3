@@ -17,13 +17,19 @@ public class StockManagerSingleton
 	
 	public StockManagerSingleton() 
 	{
+		//Set default filepath
 		this.inventoryFilePath = "inventory.csv";
+		
+		//Create empty product list
 		this.products = new ArrayList<MediaProduct>();
 	}
 	
 	public StockManagerSingleton(String filePath) 
 	{
+		//Set custom filepath
 		this.inventoryFilePath = filePath;
+		
+		//Create empty product list
 		this.products = new ArrayList<MediaProduct>();
 	}
 	
@@ -126,6 +132,7 @@ public class StockManagerSingleton
 			//Loop through lines
 			for (MediaProduct product : this.products)
 			{
+				//Write the product CSV conversion string to file
 				writer.write(product.toCsv());
 				writer.newLine();
 			}
@@ -148,25 +155,40 @@ public class StockManagerSingleton
 	
 	public boolean updateItemPrice(MediaProduct product, double newPrice)
 	{
-		//TODO
-		return false;
+		//Get index of first occurrence
+		int index = this.products.indexOf(product);
+		
+		//Check if product was found
+		if (index >= 0)
+		{
+			//Change price
+			this.products.get(index).setPrice(newPrice);
+			
+			//Product was found
+			return true;
+		}
+		else
+		{
+			//Product was not found
+			return false;
+		}
 	}
 	
 	public boolean addItem(MediaProduct product)
 	{
-		//TODO
-		return false;
+		//Add the product to the product list
+		return this.products.add(product);
 	}
 	
 	public boolean removeItem(MediaProduct product)
 	{
-		//TODO
-		return false;
+		//Remove the product from the product list
+		return this.products.remove(product);
 	}
 	
 	public void printListOfMediaProduct()
 	{
-		//Just call the other method on our 
+		//Just call the other method on our product array
 		this.printListOfMediaProduct(this.products);
 	}
 	
