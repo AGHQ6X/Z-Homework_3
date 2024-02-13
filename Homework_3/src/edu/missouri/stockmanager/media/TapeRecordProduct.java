@@ -7,6 +7,11 @@ public class TapeRecordProduct extends MediaProduct
 		super(title, price, year, genre);
 	}
 	
+	public TapeRecordProduct(MediaProduct copy)
+	{
+		super(copy);
+	}
+	
 	public TapeRecordProduct(TapeRecordProduct copy)
 	{
 		super(copy.title, copy.price, copy.year, copy.genre);

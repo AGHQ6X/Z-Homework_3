@@ -7,6 +7,11 @@ public class CDRecordProduct extends MediaProduct
 		super(title, price, year, genre);
 	}
 	
+	public CDRecordProduct(MediaProduct copy)
+	{
+		super(copy);
+	}
+	
 	public CDRecordProduct(CDRecordProduct copy)
 	{
 		super(copy.title, copy.price, copy.year, copy.genre);

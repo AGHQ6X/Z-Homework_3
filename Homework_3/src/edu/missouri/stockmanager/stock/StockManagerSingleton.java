@@ -230,19 +230,61 @@ public class StockManagerSingleton
 	
 	public ArrayList<VinylRecordProduct> getVinylRecordList(ArrayList<MediaProduct> productList)
 	{
-		//TODO
-		return new ArrayList<VinylRecordProduct>();
+		//Create empty array
+		ArrayList<VinylRecordProduct> array = new ArrayList<VinylRecordProduct>();
+				
+		//Loop through product array
+		for (MediaProduct product : productList)
+		{
+			//Check if the price is within range
+			if (product.getClass() == VinylRecordProduct.class)
+			{
+				//Add the product to the new array
+				array.add(new VinylRecordProduct(product));
+			}
+		}
+				
+		//Return the array
+		return array;
 	}
 	
 	public ArrayList<CDRecordProduct> getCDRecordsList(ArrayList<MediaProduct> productList)
 	{
-		//TODO
-		return new ArrayList<CDRecordProduct>();
+		//Create empty array
+		ArrayList<CDRecordProduct> array = new ArrayList<CDRecordProduct>();
+						
+		//Loop through product array
+		for (MediaProduct product : productList)
+		{
+			//Check if the price is within range
+			if (product.getClass() == CDRecordProduct.class)
+			{
+				//Add the product to the new array
+				array.add(new CDRecordProduct(product));
+			}
+		}
+						
+		//Return the array
+		return array;
 	}
 	
 	public ArrayList<TapeRecordProduct> getTapeRecordList(ArrayList<MediaProduct> productList)
 	{
-		//TODO
-		return new ArrayList<TapeRecordProduct>();
+		//Create empty array
+		ArrayList<TapeRecordProduct> array = new ArrayList<TapeRecordProduct>();
+								
+		//Loop through product array
+		for (MediaProduct product : productList)
+		{
+			//Check if the price is within range
+			if (product.getClass() == TapeRecordProduct.class)
+			{
+				//Add the product to the new array
+				array.add(new TapeRecordProduct(product));
+			}
+		}
+								
+		//Return the array
+		return array;
 	}
 }

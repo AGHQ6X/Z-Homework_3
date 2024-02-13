@@ -7,6 +7,11 @@ public class VinylRecordProduct extends MediaProduct
 		super(title, price, year, genre);
 	}
 	
+	public VinylRecordProduct(MediaProduct copy)
+	{
+		super(copy);
+	}
+	
 	public VinylRecordProduct(VinylRecordProduct copy)
 	{
 		super(copy.title, copy.price, copy.year, copy.genre);

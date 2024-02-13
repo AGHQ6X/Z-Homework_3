@@ -15,6 +15,14 @@ public class MediaProduct
 		this.genre = genre;
 	}
 	
+	public MediaProduct(MediaProduct copy)
+	{
+		this.title = copy.title;
+		this.price = copy.price;
+		this.year = copy.year;
+		this.genre = copy.genre;
+	}
+	
 	@Override
 	public String toString()
 	{
