@@ -78,18 +78,22 @@ public class StockManagerSingleton
 					//Check which type of media it is
 					if (values[0].equals("CD"))
 					{
+						//Add CD object
 						this.products.add(new CDRecordProduct(title, price, year, genre));
 					}
 					else if (values[0].equals("Tape"))
 					{
+						//Add tape object
 						this.products.add(new TapeRecordProduct(title, price, year, genre));
 					}
 					else if (values[0].equals("Vinyl"))
 					{
+						//Add vinyl object
 						this.products.add(new VinylRecordProduct(title, price, year, genre));
 					}
 					else
 					{
+						//Add generic object (type not identified)
 						this.products.add(new MediaProduct(title, price, year, genre));
 					}
 				}
@@ -206,8 +210,22 @@ public class StockManagerSingleton
 	
 	public ArrayList<MediaProduct> getMediaProductBelowPrice(int maxPrice)
 	{
-		//TODO
-		return new ArrayList<MediaProduct>();
+		//Create empty array
+		ArrayList<MediaProduct> array = new ArrayList<MediaProduct>();
+		
+		//Loop through product array
+		for (MediaProduct product : this.products)
+		{
+			//Check if the price is within range
+			if (product.getPrice() <= maxPrice)
+			{
+				//Add the product to the new array
+				array.add(product);
+			}
+		}
+		
+		//Return the array
+		return array;
 	}
 	
 	public ArrayList<VinylRecordProduct> getVinylRecordList(ArrayList<MediaProduct> productList)

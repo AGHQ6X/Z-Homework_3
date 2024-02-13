@@ -13,10 +13,7 @@ public class Main
 		//Initialize stock from file
 		sms.initializeStock();
 		
-		//Print list of stock
-		sms.printListOfMediaProduct();
-		
-		//Save stock to file
-		sms.saveStock();
+		//Print list of items below 
+		sms.printListOfMediaProduct(sms.getMediaProductBelowPrice(20));
 	}
 }
