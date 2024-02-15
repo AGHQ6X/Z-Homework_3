@@ -7,6 +7,9 @@ import java.util.ArrayList;
 public class StockManagerSingleton
 {
 	@SuppressWarnings("unused")
+	private static StockManagerSingleton instance;
+	
+	@SuppressWarnings("unused")
 	private final String inventoryFilePath;
 	
 	@SuppressWarnings("unused")
