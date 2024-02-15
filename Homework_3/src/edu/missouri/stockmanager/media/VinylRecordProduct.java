@@ -17,6 +17,7 @@ public class VinylRecordProduct extends MediaProduct
 		super(copy.title, copy.price, copy.year, copy.genre);
 	}
 	
+	@Override
 	public String toString()
 	{
 		return "Vinyl: " + super.toString();
