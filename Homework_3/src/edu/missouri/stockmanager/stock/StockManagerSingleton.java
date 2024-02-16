@@ -12,22 +12,25 @@ import java.util.ArrayList;
 
 public class StockManagerSingleton
 {
+	private static StockManagerSingleton singleton = null;
+	
 	private final String inventoryFilePath;
 	private ArrayList<MediaProduct> products;
 	
-	public StockManagerSingleton() 
+	public static StockManagerSingleton getSingleton()
+	{
+		if (StockManagerSingleton.singleton == null)
+		{
+			StockManagerSingleton.singleton = new StockManagerSingleton();
+		}
+		
+		return StockManagerSingleton.singleton;
+	}
+	
+	private StockManagerSingleton() 
 	{
 		//Set default filepath
 		this.inventoryFilePath = "inventory.csv";
-		
-		//Create empty product list
-		this.products = new ArrayList<MediaProduct>();
-	}
-	
-	public StockManagerSingleton(String filePath) 
-	{
-		//Set custom filepath
-		this.inventoryFilePath = filePath;
 		
 		//Create empty product list
 		this.products = new ArrayList<MediaProduct>();

@@ -11,7 +11,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		//Create a stock manager object
-		StockManagerSingleton sms = new StockManagerSingleton("inventoryCopy.csv");
+		StockManagerSingleton sms = StockManagerSingleton.getSingleton();
 		
 		//Initialize stock from file
 		sms.initializeStock();
