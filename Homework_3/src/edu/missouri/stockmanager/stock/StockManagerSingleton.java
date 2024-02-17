@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class StockManagerSingleton
 {
 	@SuppressWarnings("unused")
-	private static StockManagerSingleton instance;
+	private stat ic StockManagerSingleton instance;
 	
 	@SuppressWarnings("unused")
 	private final String inventoryFilePath;
@@ -18,6 +18,7 @@ public class StockManagerSingleton
 	public StockManagerSingleton() 
 	{ 
 		this.inventoryFilePath = "inventory.csv";
+		this.products = new ArrayList<>;
 	}
 	
 	public StockManagerSingleton(String filePath) 
@@ -27,8 +28,34 @@ public class StockManagerSingleton
 	
 	public boolean initializeStock()
 	{
-		//TODO
-		return false;
+		try (BufferedReader reader = new BufferedReader(new FileReader(inventoryFilePath))) {
+			String line;
+			while ((line = reader.readline()) != null) {
+				String[] parts = line.split(",");
+				if (parts.length == 4) {
+					String title = parts[0];
+                    double price = Double.parseDouble(parts[1]);
+                    int year = Integer.parseInt(parts[2]);
+                    Genre genre = Genre.valueOf(parts[3]);
+                    MediaProduct product;	
+                    
+                    if (parts[3].equals("VINYL")) {
+                        product = new VinylRecordProduct(title, price, year, genre);
+                    } else if (parts[3].equals("CD")) {
+                        product = new CDRecordProduct(title, price, year, genre);
+                    } else if (parts[3].equals("TAPE")) {
+                        product = new TapeRecordProduct(title, price, year, genre);
+                    } else {
+                        continue;
+                    }
+                    products.add(product);
+                }
+            }
+            return true;
+            
+        } catch (IOException e) {
+        		e.printStackTrace();
+        		return false;
 	}
 	
 	public boolean updateItemPrice(MediaProduct product, double newPrice)
