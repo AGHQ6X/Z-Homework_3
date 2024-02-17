@@ -60,14 +60,16 @@ public class StockManagerSingleton
 	
 	public boolean updateItemPrice(MediaProduct product, double newPrice)
 	{
-		//TODO
+		for (MediaProduct p : products) {
+            if (p.equals(product)) {
+                p.setPrice(newPrice);
+                return true;
 		return false;
 	}
 	
 	public boolean addItem(MediaProduct product)
 	{
-		//TODO
-		return false;
+		return products.add(product);
 	}
 	
 	public boolean removeItem(MediaProduct product)
