@@ -12,3 +12,4 @@ public class VinylRecordProduct extends MediaProduct
 		super(copy.title, copy.price, copy.year, copy.genre);
 	}
 }
+//test
