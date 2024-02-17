@@ -1,8 +1,8 @@
-ackage edu.missouri.stockmanager.main;
-import edu.missouri.stockmanager.stock.StockManagerSingleton;
-import edu.missouri.stockmanager.media.CDRecordProduct;
-import edu.missouri.stockmanager.media.Genre;
-import edu.missouri.stockmanager.media.MediaProduct;
+package Homework_3.src.edu.missouri.stockmanager.main;
+import Homework_3.src.edu.missouri.stockmanager.stock.StockManagerSingleton;
+import Homework_3.src.edu.missouri.stockmanager.media.CDRecordProduct;
+import Homework_3.src.edu.missouri.stockmanager.media.Genre;
+import Homework_3.src.edu.missouri.stockmanager.media.MediaProduct;
 //import edu.missouri.stockmanager.media.TapeRecordProduct;
 //import edu.missouri.stockmanager.media.VinylRecordProduct;
 //import java.util.ArrayList;

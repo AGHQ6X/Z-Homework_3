@@ -1,4 +1,4 @@
-package edu.missouri.stockmanager.media;
+package Homework_3.src.edu.missouri.stockmanager.media;
 
 public class TapeRecordProduct extends MediaProduct
 {

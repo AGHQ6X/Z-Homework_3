@@ -1,6 +1,6 @@
-package edu.missouri.stockmanager.media;
+package Homework_3.src.edu.missouri.stockmanager.media;
 
-import edu.missouri.stockmanager.media.Genre;
+//import Homework_3.src.edu.missouri.stockmanager.media.Genre;
 
 public class MediaProduct
 {
