@@ -1,4 +1,4 @@
-package Homework_3.src.edu.missouri.stockmanager.media;
+package edu.missouri.stockmanager.media;
 
 public class VinylRecordProduct extends MediaProduct
 {

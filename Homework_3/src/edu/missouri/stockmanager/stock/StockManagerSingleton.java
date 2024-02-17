@@ -1,5 +1,5 @@
-package Homework_3.src.edu.missouri.stockmanager.stock;
-import Homework_3.src.edu.missouri.stockmanager.media.*;
+package edu.missouri.stockmanager.stock;
+import edu.missouri.stockmanager.media.*;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
