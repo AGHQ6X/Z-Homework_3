@@ -16,7 +16,7 @@ public class StockManagerSingleton
 	private ArrayList<MediaProduct> products;
 	
 	public StockManagerSingleton() 
-	{
+	{ 
 		this.inventoryFilePath = "inventory.csv";
 	}
 	
